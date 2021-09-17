@@ -7,9 +7,32 @@ const Reducer = () => {
   return (
     <div>
       <h1>Counter in reducer</h1>
-      <h1>{state.counter}</h1>
-      <button onClick={() => dispatch({ type: "minus" })}>-</button>
-      <button onClick={() => dispatch({ type: "plus" })}>+</button>
+      <div
+        style={{ margin: "100px", display: "flex", justifyContent: "center" }}
+      >
+        <button
+          style={{ width: "100px", height: "100px", fontSize: "40px" }}
+          onClick={() => dispatch({ type: "minus" })}
+        >
+          -
+        </button>
+        <h1
+          style={{
+            margin: "0px",
+            fontSize: "70px",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          {state.counter}
+        </h1>
+        <button
+          style={{ width: "100px", height: "100px", fontSize: "40px" }}
+          onClick={() => dispatch({ type: "plus" })}
+        >
+          +
+        </button>
+      </div>
     </div>
   );
 };

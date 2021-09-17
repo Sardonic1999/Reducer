@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import "./Style.css";
 import Reducer from "./Reducer/Reducer";
+import MainReduce from "./Reducer_web/MainReduce";
 
 export default class Root extends Component {
   constructor(props) {
     super(props);
     this.state = {
       isLog: false,
-      isActive: "Reducer",
+      isActive: "MainReduce",
     };
   }
   render() {
@@ -25,10 +26,10 @@ export default class Root extends Component {
             Reducer
           </div>
           <div
-            onClick={() => change("Icon")}
-            className={this.state.isActive === "Icon" ? "tab" : "item"}
+            onClick={() => change("MainReduce")}
+            className={this.state.isActive === "MainReduce" ? "tab" : "item"}
           >
-            Icon
+            MainReduce
           </div>
           <div
             onClick={() => change("Contex_Hook")}
@@ -51,7 +52,7 @@ export default class Root extends Component {
         </div>
         {/* <h3>{this.state.isActive}</h3> */}
         {this.state.isActive === "Reducer" && <Reducer />}
-        {this.state.isActive === "Icon"}
+        {this.state.isActive === "MainReduce" && <MainReduce />}
         {this.state.isActive === "Contex_Hook"}
         {this.state.isActive === "Hook"}
         {this.state.isActive === "None"}
